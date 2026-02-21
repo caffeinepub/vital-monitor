@@ -1,0 +1,69 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-21T00:41:11.492Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Add a login page that appears before the main health dashboard, requiring users to authenticate via Internet Identity before accessing the application",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/LoginPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/LoginPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Add UI controls to request Bluetooth device connection with a clear button or interface element that triggers the browser's Bluetooth pairing dialog",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/BluetoothConnectionButton.tsx",
+          "frontend/src/components/PageLayout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/BluetoothConnectionButton.tsx",
+          "frontend/src/components/PageLayout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Implement Web Bluetooth API integration to scan for and connect to nearby Bluetooth devices when user initiates pairing",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useBluetooth.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useBluetooth.ts"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/components/BluetoothConnectionButton.tsx",
+    "frontend/src/components/LoginPage.tsx",
+    "frontend/src/components/PageLayout.tsx",
+    "frontend/src/hooks/useBluetooth.ts",
+    "frontend/src/types/bluetooth.d.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

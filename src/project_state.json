@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Health monitoring app with login authentication and Bluetooth device connectivity for recording health metrics every 2 minutes and exporting as timestamped CSV files",
+  "architectural_notes": [
+    "Health metrics dashboard with data visualization",
+    "CSV export functionality with timestamp-based file naming",
+    "2-minute interval data recording system",
+    "User authentication system required",
+    "Bluetooth API integration for device connectivity"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-add-a-login-page-that-appears-before-the-main-health-dashboard-requiring-users-to-authenticate-via-internet-identity-before-accessing-the-application",
+      "title": "Add a login page that appears before the main health dashboard, requiring users to authenticate via Internet Identity before accessing the application",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-ui-controls-to-request-bluetooth-device-connection-with-a-clear-button-or-interface-element-that-triggers-the-browser-s-bluetooth-pairing-dialog",
+      "title": "Add UI controls to request Bluetooth device connection with a clear button or interface element that triggers the browser's Bluetooth pairing dialog",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-web-bluetooth-api-integration-to-scan-for-and-connect-to-nearby-bluetooth-devices-when-user-initiates-pairing",
+      "title": "Implement Web Bluetooth API integration to scan for and connect to nearby Bluetooth devices when user initiates pairing",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add login/authentication page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add Bluetooth device connection capability",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Record health data every 2 minutes and export as timestamped CSV files",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Vital Monitor",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

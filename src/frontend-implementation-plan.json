@@ -1,0 +1,68 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add login page and Bluetooth device connection",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Add a login page that appears before the main health dashboard, requiring users to authenticate via Internet Identity before accessing the application",
+      "acceptanceCriteria": [
+        "Login page displays before the main dashboard when user is not authenticated",
+        "Login page includes a clear call-to-action button to authenticate with Internet Identity",
+        "After successful authentication, user is redirected to the health dashboard",
+        "Login page follows the medical theme established in the application"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/LoginPage.tsx",
+          "operation": "create",
+          "description": "Create a new LoginPage component that displays a medical-themed login interface with Internet Identity authentication. Include the app branding, a clear call-to-action button to authenticate, and use the existing medical color palette from Tailwind config. The page should use the useInternetIdentity hook to trigger login and display loading states."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Modify App.tsx to conditionally render either the LoginPage or the main health dashboard based on Internet Identity authentication state. Use the useInternetIdentity hook to check if the user is authenticated, and display LoginPage when isAuthenticated is false. Wrap the existing dashboard content so it only renders when authenticated."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add UI controls to request Bluetooth device connection with a clear button or interface element that triggers the browser's Bluetooth pairing dialog",
+      "acceptanceCriteria": [
+        "A visible 'Connect Device' or 'Connect via Bluetooth' button is present in the dashboard header or settings area",
+        "Clicking the button triggers the Web Bluetooth API device selection dialog",
+        "Connection status (connected/disconnected) is displayed to the user",
+        "User receives clear feedback when device connection succeeds or fails"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BluetoothConnectionButton.tsx",
+          "operation": "create",
+          "description": "Create a BluetoothConnectionButton component that displays a button to initiate Bluetooth pairing and shows connection status. Include visual indicators for connected/disconnected states using the medical theme colors. Display error messages using the Alert component from shadcn/ui when connection fails or Bluetooth is not supported. The button should call the useBluetooth hook to trigger device connection."
+        },
+        {
+          "path": "frontend/src/components/PageLayout.tsx",
+          "operation": "modify",
+          "description": "Modify PageLayout to include the BluetoothConnectionButton in the header area next to the app branding. Position it appropriately so it's visible but doesn't interfere with the main title. Ensure it follows the existing header styling and layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement Web Bluetooth API integration to scan for and connect to nearby Bluetooth devices when user initiates pairing",
+      "acceptanceCriteria": [
+        "Application uses navigator.bluetooth.requestDevice() to scan for devices",
+        "User can select from available Bluetooth devices in their vicinity",
+        "Application maintains connection state and handles disconnections gracefully",
+        "Error messages are displayed if Bluetooth is not supported or permission is denied"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useBluetooth.ts",
+          "operation": "create",
+          "description": "Create a useBluetooth custom hook that manages Bluetooth device connection state and operations. Implement requestDevice() to scan for and connect to Bluetooth devices using the Web Bluetooth API. Maintain connection state (connected device, connection status) in React state. Handle disconnection events gracefully and provide methods to connect and disconnect. Include error handling for unsupported browsers, permission denials, and connection failures. Return connection state, device info, connect/disconnect methods, and error states for UI consumption."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "kind": "build_request",
+  "title": "Add login page and Bluetooth device connection",
+  "projectName": "Vital Monitor",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Add a login page that appears before the main health dashboard, requiring users to authenticate via Internet Identity before accessing the application",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "I want this app to have login page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Login page displays before the main dashboard when user is not authenticated",
+        "Login page includes a clear call-to-action button to authenticate with Internet Identity",
+        "After successful authentication, user is redirected to the health dashboard",
+        "Login page follows the medical theme established in the application"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add UI controls to request Bluetooth device connection with a clear button or interface element that triggers the browser's Bluetooth pairing dialog",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "have the option to ask for connecting devices using bluetooth"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visible 'Connect Device' or 'Connect via Bluetooth' button is present in the dashboard header or settings area",
+        "Clicking the button triggers the Web Bluetooth API device selection dialog",
+        "Connection status (connected/disconnected) is displayed to the user",
+        "User receives clear feedback when device connection succeeds or fails"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement Web Bluetooth API integration to scan for and connect to nearby Bluetooth devices when user initiates pairing",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "have the option to ask for connecting devices using bluetooth"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Application uses navigator.bluetooth.requestDevice() to scan for devices",
+        "User can select from available Bluetooth devices in their vicinity",
+        "Application maintains connection state and handles disconnections gracefully",
+        "Error messages are displayed if Bluetooth is not supported or permission is denied"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify existing immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/main.tsx, frontend/src/components/ui",
+    "Maintain single-actor architecture in backend/main.mo",
+    "Use existing Internet Identity authentication infrastructure",
+    "Web Bluetooth API is browser-dependent and may not work in all environments"
+  ],
+  "nonGoals": [
+    "Implementing actual health data transmission from Bluetooth devices",
+    "Creating backend storage for device connection information",
+    "Supporting non-Bluetooth wireless protocols",
+    "Automatic device reconnection on page load"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

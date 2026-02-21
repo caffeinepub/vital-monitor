@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Medical-themed color palette with soft greens */
+        --background: 0.98 0 0;
+        --foreground: 0.145 0 0;
+        --card: 1 0 0;
+        --card-foreground: 0.145 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.145 0 0;
+        
+        /* Soft green primary color for medical theme */
+        --primary: 0.65 0.15 160;
+        --primary-foreground: 1 0 0;
+        
+        --secondary: 0.95 0.01 160;
+        --secondary-foreground: 0.25 0 0;
+        --muted: 0.96 0 0;
+        --muted-foreground: 0.5 0 0;
+        --accent: 0.94 0.02 160;
+        --accent-foreground: 0.25 0 0;
+        
+        /* Critical red for alarms */
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 1 0 0;
+        
+        --border: 0.92 0 0;
+        --input: 0.92 0 0;
+        --ring: 0.65 0.15 160;
+        
+        /* Health status colors */
+        --health-normal: 0.65 0.15 160;
+        --health-warning: 0.70 0.18 80;
+        --health-critical: 0.55 0.22 25;
+        
+        /* Health-specific design tokens */
+        --health-primary: 0.65 0.15 160;
+        --health-bg-start: 0.98 0.01 160;
+        --health-bg-end: 0.96 0.02 180;
+        --health-border: 0.90 0.01 160;
+        --health-text-primary: 0.20 0 0;
+        --health-text-secondary: 0.50 0 0;
+        
+        /* Chart colors */
+        --chart-1: 0.646 0.222 41.116;
+        --chart-2: 0.6 0.118 184.704;
+        --chart-3: 0.398 0.07 227.392;
+        --chart-4: 0.828 0.189 84.429;
+        --chart-5: 0.769 0.188 70.08;
+    }
+
+    .dark {
+        --background: 0.15 0 0;
+        --foreground: 0.98 0 0;
+        --card: 0.18 0 0;
+        --card-foreground: 0.98 0 0;
+        --popover: 0.20 0 0;
+        --popover-foreground: 0.98 0 0;
+        
+        --primary: 0.70 0.15 160;
+        --primary-foreground: 0.15 0 0;
+        
+        --secondary: 0.25 0.01 160;
+        --secondary-foreground: 0.95 0 0;
+        --muted: 0.25 0 0;
+        --muted-foreground: 0.65 0 0;
+        --accent: 0.30 0.02 160;
+        --accent-foreground: 0.95 0 0;
+        
+        --destructive: 0.60 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        
+        --border: 0.30 0 0;
+        --input: 0.30 0 0;
+        --ring: 0.70 0.15 160;
+        
+        --health-normal: 0.70 0.15 160;
+        --health-warning: 0.75 0.18 80;
+        --health-critical: 0.60 0.22 25;
+        
+        --health-primary: 0.70 0.15 160;
+        --health-bg-start: 0.15 0 0;
+        --health-bg-end: 0.18 0 0;
+        --health-border: 0.30 0.01 160;
+        --health-text-primary: 0.95 0 0;
+        --health-text-secondary: 0.65 0 0;
+        
+        --chart-1: 0.70 0.20 41.116;
+        --chart-2: 0.65 0.15 184.704;
+        --chart-3: 0.55 0.10 227.392;
+        --chart-4: 0.80 0.18 84.429;
+        --chart-5: 0.75 0.18 70.08;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}
+
+@layer utilities {
+    .shadow-health {
+        box-shadow: 0 1px 3px 0 oklch(0 0 0 / 0.05), 0 1px 2px -1px oklch(0 0 0 / 0.05);
+    }
+    
+    .shadow-health-lg {
+        box-shadow: 0 4px 6px -1px oklch(0 0 0 / 0.07), 0 2px 4px -2px oklch(0 0 0 / 0.07);
+    }
+}

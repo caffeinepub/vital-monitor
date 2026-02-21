@@ -1,0 +1,61 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-login-page-that-appears-before-the-main-health-dashboard-requiring-users-to-authenticate-via-internet-identity-before-accessing-the-application",
+      "featureTitle": "Add a login page that appears before the main health dashboard, requiring users to authenticate via Internet Identity before accessing the application",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/LoginPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-ui-controls-to-request-bluetooth-device-connection-with-a-clear-button-or-interface-element-that-triggers-the-browser-s-bluetooth-pairing-dialog",
+      "featureTitle": "Add UI controls to request Bluetooth device connection with a clear button or interface element that triggers the browser's Bluetooth pairing dialog",
+      "files": [
+        "frontend/src/components/BluetoothConnectionButton.tsx",
+        "frontend/src/components/PageLayout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-web-bluetooth-api-integration-to-scan-for-and-connect-to-nearby-bluetooth-devices-when-user-initiates-pairing",
+      "featureTitle": "Implement Web Bluetooth API integration to scan for and connect to nearby Bluetooth devices when user initiates pairing",
+      "files": [
+        "frontend/src/hooks/useBluetooth.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
